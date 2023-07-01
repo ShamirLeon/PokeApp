@@ -1,0 +1,48 @@
+.Navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding);
+
+    &__Logo{
+        height: 56px;
+    }
+
+    & input{
+        // background-color: aqua;
+        width: 350px;
+        padding: 12px 16px;
+        outline: none;
+        font-family: var(--Montserrat);
+        text-transform: uppercase;
+        letter-spacing: 2.87px;
+        font-size: 14px;
+        border-radius: 80px;
+        border: 2px solid rgba(0, 0, 0, 0.44);
+    }
+
+    &__Favorites{
+        display: flex;
+        width: min-content;
+        height: 32px;
+        padding: 4px 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: var(--Gray);
+    }
+
+    &__Submenu{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+}
+
+.Number{
+    color: var(--Ligth-Gray);
+}
