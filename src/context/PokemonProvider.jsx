@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { PokemonContext } from "./PokemonContext";
 
-export const PokemonProvider = () => {
+export const PokemonProvider = ({children}) => {
   const [allPokemons, setAllPokemons] = useState([]);
 
   const getAllPokemons = async () => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
-    const res = await fetch(`${baseURL}pokemon?limit=1&offset=1`);
+    const res = await fetch(`${baseURL}pokemon?limit=20&offset=0`);
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {
@@ -16,12 +17,20 @@ export const PokemonProvider = () => {
     });
 
     const results = await Promise.all(promises);
-    console.log(results)
+    console.log(results[1]);
 
-    setAllPokemons([...allPokemons,...results]);
+    setAllPokemons([...allPokemons, ...results]);
   };
 
   useEffect(() => {
     getAllPokemons();
   }, []);
+
+  return (
+    <PokemonContext.Provider
+      value={{
+        allPokemons,
+      }}
+    >{children}</PokemonContext.Provider>
+  );
 };

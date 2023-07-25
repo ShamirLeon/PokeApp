@@ -8,10 +8,10 @@ function App() {
     <>
       <Navigation />
       <SideMenu />
+      <PokemonProvider>
       <div className="Main-content">
         <PokeList />
       </div>
-      <PokemonProvider>
       </PokemonProvider>
     </>
   );
