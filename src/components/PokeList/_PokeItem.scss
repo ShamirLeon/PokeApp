@@ -1,0 +1,15 @@
+.PokeItem{
+    display: flex;
+    position: relative;
+    gap: 56px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: var(--BackItem);
+
+    &__Star{
+        position: absolute;
+        top: 16px;
+        right: 40px;
+    }
+}
