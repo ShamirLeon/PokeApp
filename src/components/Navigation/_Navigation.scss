@@ -1,8 +1,13 @@
 .Navigation{
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--padding);
+    z-index: 101;
+    background-color: #FFF;
+    width: 100%;
+    height: var(--nav-height);
 
     &__Logo{
         height: 56px;
