@@ -1,16 +1,23 @@
-import InfoItem from "./InfoItem"
+import InfoItem from "./InfoItem";
 
-const PokeInfo = () => {
-    return(
-        <div className="Info__List">
-            <InfoItem text={'Speed'} value={60}/>
-            <InfoItem text={'Special Defense'} value={150}/>
-            <InfoItem text={'Special Attack'} value={240}/>
-            <InfoItem text={'Defense'} value={10}/>
-            <InfoItem text={'Attack'} value={230}/>
-            <InfoItem text={'Hp'} value={180}/>
-        </div>
-    )
-}
+const PokeInfo = ({
+  speed,
+  specialDefense,
+  specialAttack,
+  Defense,
+  Attack,
+  Hp,
+}) => {
+  return (
+    <div className="Info__List">
+      <InfoItem text={"Speed"} value={speed} />
+      <InfoItem text={"Special Defense"} value={specialDefense} />
+      <InfoItem text={"Special Attack"} value={specialAttack} />
+      <InfoItem text={"Defense"} value={Defense} />
+      <InfoItem text={"Attack"} value={Attack} />
+      <InfoItem text={"Hp"} value={Hp} />
+    </div>
+  );
+};
 
-export default PokeInfo
+export default PokeInfo;

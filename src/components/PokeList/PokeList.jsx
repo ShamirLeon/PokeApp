@@ -1,21 +1,17 @@
-import PokeItem from "./PokeItem"
+import { useContext } from "react";
+import PokeItem from "./PokeItem";
+import { PokemonContext } from "../../context/PokemonContext";
 
-const PokeList = (params) => {
-    return(
-        <main>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-            <PokeItem/>
-        </main>
-    )
-}
+const PokeList = () => {
+  const { allPokemons } = useContext(PokemonContext);
 
-export default PokeList
+  return (
+    <main>
+      {allPokemons.map((pokemon) => (
+        <PokeItem pokemon={pokemon} key={pokemon.id} />
+      ))}
+    </main>
+  );
+};
+
+export default PokeList;
