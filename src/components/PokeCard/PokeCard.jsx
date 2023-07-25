@@ -1,20 +1,21 @@
 import mewtwo from "../../assets/pokemon-mewtwo.png";
 
-const PokeCard = () => {
+const PokeCard = ({ height, weight, number, name, type1, type2 = null, img }) => {
+  const typeText = "psychic";
   return (
     <div className="PokeCard">
       <div className="PokeCard__Circles PokeCard__Circles--left">
-        <span>2.3m</span>
+        <span>{height}m</span>
       </div>
       <div className="PokeCard__Circles PokeCard__Circles--right">
-        <span>127Kg</span>
+        <span>{weight}kg</span>
       </div>
-      <span className="PokeCard__Number">#150</span>
-      <img src={mewtwo} alt="" className="PokeCard__Img" />
-      <h2 className="PokeCard__Name">Mewtwo</h2>
+      <span className="PokeCard__Number">#{number}</span>
+      <img src={img} alt={`Pokemon ${name}`} className="PokeCard__Img" />
+      <h2 className="PokeCard__Name">{name}</h2>
       <div className="PokeCard__Texts">
-        <h3 className="PokeCard__Type">Psychic</h3>
-        <h3 className="PokeCard__Type">Psychic</h3>
+        <h3 className={`PokeCard__Type ${type1}`}>{type1}</h3>
+        <h3 className={`PokeCard__Type ${type2}`}>{type2}</h3>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@
     height: 280px;
     padding-bottom: 30px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-transform: capitalize;
 
     &__Circles{
         display: grid;
@@ -43,7 +44,7 @@
     }
 
     &__Img{
-        width: 20%;
+        width: 25%;
         z-index: 10;
     }
 
