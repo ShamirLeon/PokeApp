@@ -1,0 +1,51 @@
+.Info{
+    color: var(--Gray);
+    font-size: 18px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__Text{
+        font-weight: 700;
+        text-align: right;
+    }
+
+    &__Value{
+        font-weight: 500;
+        text-align: center;
+        width: 24px;
+    }
+
+    &__Bar{
+        width: 255px;
+        height: 12px;
+        border-radius: 12px;
+        background: #E5E5E5;
+        overflow: hidden;
+    }
+
+    &__Progress{
+        // width: 140px;
+        height: 12px;
+        background-color: red;
+        border-radius: 12px;
+    }
+}
+
+.Green{
+    background-color: var(--color-grass);
+}
+
+.Red{
+    background-color: #D38851;
+}
+
+.Yellow{
+    background-color: var(--Yellow);
+}
+
+.Orange{
+    background-color: var(--Dark-Yellow);
+}
+
