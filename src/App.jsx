@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navigation />
-        <SideMenu />
+      <SideMenu />
       <div className="Main-content">
         <PokeList />
       </div>
