@@ -5,6 +5,15 @@
 @use './scss/base/base';
 @use './scss/base/reset';
 
+/* App */
+@use './app';
+
 /* Components */
 @use './components/Navigation/Navigation';
+@use './components/SideMenu/SideMenu';
+@use './components/PokeCard/PokeCard';
+@use './components/PokeInfo/PokeInfo';
+@use './components/PokeInfo/InfoItem';
+@use './components//PokeList/PokeList';
+@use './components/PokeList/PokeItem';
 
