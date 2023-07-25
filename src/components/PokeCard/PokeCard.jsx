@@ -12,7 +12,10 @@ const PokeCard = () => {
       <span className="PokeCard__Number">#150</span>
       <img src={mewtwo} alt="" className="PokeCard__Img" />
       <h2 className="PokeCard__Name">Mewtwo</h2>
-      <h3 className="PokeCard__Type">Psychic</h3>
+      <div className="PokeCard__Texts">
+        <h3 className="PokeCard__Type">Psychic</h3>
+        <h3 className="PokeCard__Type">Psychic</h3>
+      </div>
     </div>
   );
 };

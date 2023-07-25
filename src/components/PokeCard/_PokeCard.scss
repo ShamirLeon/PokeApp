@@ -54,6 +54,11 @@
         color: var(--Name-Gray);
     }
 
+    &__Texts{
+        display: flex;
+        gap: 12px;
+    }
+
     &__Type{
         font-size: 16px;
         font-weight: 700;
