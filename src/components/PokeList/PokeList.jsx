@@ -1,16 +1,23 @@
 import { useContext } from "react";
 import PokeItem from "./PokeItem";
 import { PokemonContext } from "../../context/PokemonContext";
+import Loader from "../Loader/Loader";
 
 const PokeList = () => {
-  const { allPokemons } = useContext(PokemonContext);
+  const { allPokemons, loading } = useContext(PokemonContext);
 
   return (
-    <main>
-      {allPokemons.map((pokemon) => (
-        <PokeItem pokemon={pokemon} key={pokemon.id} />
-      ))}
-    </main>
+    <>
+      {loading ? (
+        <Loader></Loader>
+      ) : (
+        <main>
+          {allPokemons.map((pokemon) => (
+            <PokeItem pokemon={pokemon} key={pokemon.id} />
+          ))}
+        </main>
+      )}
+    </>
   );
 };
 
