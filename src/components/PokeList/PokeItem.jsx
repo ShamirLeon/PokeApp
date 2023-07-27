@@ -2,9 +2,9 @@ import StarIcon from "../../assets/Star";
 import PokeCard from "../PokeCard/PokeCard";
 import PokeInfo from "../PokeInfo/PokeInfo";
 
-const PokeItem = ({ pokemon }) => {
+const PokeItem = ({ pokemon, color }) => {
   return (
-    <div className="PokeItem">
+    <div className="PokeItem" style={{ backgroundColor: `${color}` }}>
       <PokeCard
         height={pokemon.height}
         weight={pokemon.weight}
