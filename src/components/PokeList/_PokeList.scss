@@ -2,4 +2,28 @@ main{
     width: 100%;
     padding-top: var(--nav-height);
     padding-left: var(--asmenu-width);
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.LoadMore{
+    border: 1px solid var(--Yellow);
+    color: var(--Dark-Blue);
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-family: var(--Montserrat);
+    font-weight: 700;
+    background-color: rgba(#F9CC3B, .3);
+    backdrop-filter: blur(6px);
+    transition: all .5s ease;
+    max-width: 150px;
+
+    // position: absolute;
+    bottom: 300;
+    left: 0;
+    right: 0;
+
+    &:hover{
+        background-color: rgba(#F9CC3B, 1);
+    }
 }
