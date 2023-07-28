@@ -8,7 +8,7 @@ const PokeList = () => {
     useContext(PokemonContext);
 
   const bgColor1 = "#EAEAEA";
-  const bgColor2 = "#FFF";
+  const bgColor2 = "rgba(234, 234, 234, .5)";
 
   return (
     <>
