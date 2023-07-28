@@ -5,7 +5,7 @@ import SearchIcon from "../../assets/icons-search.svg";
 
 import { PokemonContext } from "../../context/PokemonContext";
 import { Route, Link, Router, Switch } from "wouter";
-import HomePage from "../../pages/home";
+import HomePage from "../../pages/HomePage";
 
 const Navigation = () => {
   const { inputFilter } = useContext(PokemonContext);

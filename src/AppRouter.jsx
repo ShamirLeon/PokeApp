@@ -1,6 +1,6 @@
 import { Route, Router, Switch } from "wouter";
-import HomePage from "./pages/home";
-import FavsPage from "./pages/favs";
+import HomePage from "./pages/HomePage";
+import FavsPage from "./pages/FavoritesPage";
 
 export const AppRouter = () => {
   return (
