@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import PokeItem from "./PokeItem";
 import { PokemonContext } from "../../context/PokemonContext";
 import Loader from "../Loader/Loader";
@@ -37,9 +37,13 @@ const PokeList = () => {
               ))}
             </>
           )}
-          <button className="LoadMore" onClick={loadMore}>
-            Load More
-          </button>
+
+          <div className="LoadMore__Container">
+            <button className="LoadMore" onClick={loadMore}>
+              Load More
+            </button>
+          </div>
+
         </main>
       )}
     </>
