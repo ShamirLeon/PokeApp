@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
+// import { useForm } from "../customHook/useForm";
 
 export const PokemonProvider = ({ children }) => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [globalPokemons, setGlobalPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
-  const [active, setActive] = useState('')
+  const [active, setActive] = useState("");
 
   const baseURL = "https://pokeapi.co/api/v2/";
 
-  /* Get first 50 15 pokemons */
+  /* Get first 15 pokemons */
   const getAllPokemons = async (limit = 15) => {
     const res = await fetch(
       `${baseURL}pokemon?limit=${limit}&offset=${offset}`
@@ -58,9 +59,9 @@ export const PokemonProvider = ({ children }) => {
 
   /* Clear filter button */
   const clearFilter = () => {
-    setActive('');
+    setActive("");
     setFilteredPokemons([]);
-  }
+  };
 
   /* Filter pokemons */
   const [filteredPokemons, setFilteredPokemons] = useState([]);
@@ -73,6 +74,21 @@ export const PokemonProvider = ({ children }) => {
     setFilteredPokemons(filteredResults);
     console.log(filteredPokemons);
   };
+
+  /* Search input filter */
+  const inputFilter = (value) => {
+    const filterPokemons = globalPokemons.filter((pokemon) =>
+      pokemon.name.includes(value)
+    );
+    setFilteredPokemons(filterPokemons);
+
+    const inputSearch = document.getElementById('inputSearch')
+    console.log(inputSearch);
+    inputSearch.addEventListener("search", ()=>{
+      clearFilter()
+    })
+  };
+
 
   return (
     <PokemonContext.Provider
@@ -88,7 +104,9 @@ export const PokemonProvider = ({ children }) => {
 
         active,
         setActive,
-        clearFilter
+        clearFilter,
+
+        inputFilter,
       }}
     >
       {children}

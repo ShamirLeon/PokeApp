@@ -7,8 +7,8 @@ import { PokemonProvider } from "./context/PokemonProvider";
 function App() {
   return (
     <>
-      <Navigation />
       <PokemonProvider>
+      <Navigation />
         <SideMenu />
         <div className="Main-content">
           <PokeList />
