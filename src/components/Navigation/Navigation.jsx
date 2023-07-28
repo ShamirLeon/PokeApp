@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import Logo from "../../assets/Pokédex_logo.png";
 import StarIcon from "../../assets/Star";
+import SearchIcon from "../../assets/icons-search.svg"
+
 import { PokemonContext } from "../../context/PokemonContext";
 
 const Navigation = () => {
@@ -8,27 +10,24 @@ const Navigation = () => {
 
   const [form, setForm] = useState("");
 
-  const onChange = (e) => {
-    e.preventDefault();
-    setForm(e.target.value);
-    inputFilter(form);
-  };
-
   return (
     <header>
       <nav className="Navigation">
         <img src={Logo} alt="" className="Navigation__Logo" />
         <div className="Navigation__Submenu">
-          <form>
+          <form onSubmit={ev => {ev.preventDefault(); inputFilter(form);}}>
             <input
               id="inputSearch"
               type="search"
               name="search"
+              onChange={ev => {setForm(ev.target.value)}}
               value={form}
-              onChange={onChange}
               placeholder="Search pokemon"
               autoComplete="off"
             />
+          <button type="submit" className="Navigation__Btn">
+            <img src={SearchIcon} />
+          </button>
           </form>
 
           <div className="Navigation__Favorites">
