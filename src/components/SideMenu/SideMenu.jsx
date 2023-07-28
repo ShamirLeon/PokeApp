@@ -1,8 +1,11 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
 
+import cancelIcon from '../../assets/cancel-icon.svg'
+
 const SideMenu = () => {
-  const { filterPokemons } = useContext(PokemonContext);
+  const { filterPokemons, active, setActive, clearFilter } =
+    useContext(PokemonContext);
 
   const buttons = [
     { id: 1, color: "fire" },
@@ -30,13 +33,22 @@ const SideMenu = () => {
   return (
     <aside className="SideMenu">
       {buttons.map(({ id, color }) => (
-        <button
-          className={`SideMenu__Btn ${color}`}
-          key={id}
-          onClick={() => filterPokemons(color)}
-        >
-          {color}
-        </button>
+        <div className="SideMenu__BtnContainer" key={id}>
+          <button
+            className={active == color ? `SideMenu__Btn ${color} active` : `SideMenu__Btn ${color}`}
+            onClick={() => {
+              filterPokemons(color);
+              setActive(color);
+            }}
+          >
+            {color}
+          </button>
+          {active == color ? (
+            <button style={{backgroundColor: active == color ? `var(--color-${color})` : null}} className="clearFilter" onClick={clearFilter}>
+              <img src={cancelIcon} />
+            </button>
+          ) : null}
+        </div>
       ))}
     </aside>
   );

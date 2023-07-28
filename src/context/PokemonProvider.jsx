@@ -6,6 +6,7 @@ export const PokemonProvider = ({ children }) => {
   const [globalPokemons, setGlobalPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
+  const [active, setActive] = useState('')
 
   const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -30,7 +31,7 @@ export const PokemonProvider = ({ children }) => {
 
   /* Get global pokemons */
   const getGlobalPokemons = async () => {
-    const res = await fetch(`${baseURL}pokemon?limit=10000&offset=${offset}`);
+    const res = await fetch(`${baseURL}pokemon?limit=2000&offset=${offset}`);
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {
@@ -55,6 +56,12 @@ export const PokemonProvider = ({ children }) => {
   /* Load more button */
   const loadMore = () => setOffset(offset + 15);
 
+  /* Clear filter button */
+  const clearFilter = () => {
+    setActive('');
+    setFilteredPokemons([]);
+  }
+
   /* Filter pokemons */
   const [filteredPokemons, setFilteredPokemons] = useState([]);
 
@@ -78,6 +85,10 @@ export const PokemonProvider = ({ children }) => {
 
         filterPokemons,
         filteredPokemons,
+
+        active,
+        setActive,
+        clearFilter
       }}
     >
       {children}
