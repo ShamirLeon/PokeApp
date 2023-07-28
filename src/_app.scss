@@ -1,7 +1,15 @@
 .Main-content{
     display: flex;
+    position: relative;
     // height: 100vh;
 }
+
+
+.Favs__Container{
+    padding-top: var(--nav-height);
+    padding-left: var(--asmenu-width);
+}
+
 ::-webkit-scrollbar{
     width: .4rem;
 }

@@ -18,10 +18,12 @@ main{
     transition: all .5s ease;
     max-width: 150px;
 
-    // position: absolute;
-    bottom: 300;
-    left: 0;
-    right: 0;
+    &__Container{
+        width: 100%;
+        padding: 16px 0 0;
+        display: grid;
+        place-content: center;
+    }
 
     &:hover{
         background-color: rgba(#F9CC3B, 1);
