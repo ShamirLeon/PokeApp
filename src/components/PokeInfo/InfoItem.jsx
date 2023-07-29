@@ -9,7 +9,7 @@ const InfoItem = ({ text, value }) => {
   let color = "DefaultColor";
 
   for (const range of colorRanges) {
-    if (value >= range.min && value < range.max) {
+    if (value >= range.min && value <= range.max) {
       color = range.color;
       break;
     }
