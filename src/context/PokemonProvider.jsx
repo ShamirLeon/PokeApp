@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
-// import { useForm } from "../customHook/useForm";
 
 export const PokemonProvider = ({ children }) => {
   const [allPokemons, setAllPokemons] = useState([]);
@@ -82,13 +81,60 @@ export const PokemonProvider = ({ children }) => {
     );
     setFilteredPokemons(filterPokemons);
 
-    const inputSearch = document.getElementById('inputSearch')
+    const inputSearch = document.getElementById("inputSearch");
     console.log(inputSearch);
-    inputSearch.addEventListener("search", ()=>{
-      clearFilter()
-    })
+    inputSearch.addEventListener("search", () => {
+      clearFilter();
+    });
   };
 
+  /* favorites page */
+
+  const [favsPokemons, setFavsPokemons] = useState([]);
+  useEffect(() => {
+    getFavoritesPokemons();
+  }, []);
+
+  const getFavoritesPokemons = () => {
+    const savedPokemons = localStorage.getItem("FavsPokemons");
+    const array = JSON.parse(savedPokemons);
+    if (savedPokemons) setFavsPokemons(array);
+  };
+
+  const handleAddPokemon = (newPokemon) => {
+    // Verificar si el Pokémon ya está en la lista de favoritos
+    const isPokemonInFavorites = favsPokemons.some(
+      (pokemon) => pokemon.id === newPokemon.id
+    );
+
+    // Si el Pokémon no está en la lista, agrégalo
+    if (!isPokemonInFavorites) {
+      const updatedFavsPokemons = [...favsPokemons, newPokemon];
+      setFavsPokemons(updatedFavsPokemons);
+      localStorage.setItem("FavsPokemons", JSON.stringify(updatedFavsPokemons));
+    }
+  };
+
+  const handleRemPokemon = (id) => {
+    // Buscar el índice del Pokémon que deseas eliminar
+    const indexToRemove = favsPokemons.findIndex(
+      (pokemon) => pokemon.id === id
+    );
+
+    // Crear una nueva copia del array de favoritos sin el Pokémon
+    if (indexToRemove !== -1) {
+      const updatedFavsPokemons = [
+        ...favsPokemons.slice(0, indexToRemove),
+        ...favsPokemons.slice(indexToRemove + 1),
+      ];
+
+      // Actualizar el estado con el nuevo array de favoritos
+      setFavsPokemons(updatedFavsPokemons);
+
+      // Guardar el nuevo array en el localStorage
+      localStorage.setItem("FavsPokemons", JSON.stringify(updatedFavsPokemons));
+    }
+  };
 
   return (
     <PokemonContext.Provider
@@ -107,6 +153,12 @@ export const PokemonProvider = ({ children }) => {
         clearFilter,
 
         inputFilter,
+
+        /* Favorites page */
+        favsPokemons,
+        getFavoritesPokemons,
+        handleAddPokemon,
+        handleRemPokemon,
       }}
     >
       {children}

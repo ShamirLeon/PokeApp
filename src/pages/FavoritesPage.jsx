@@ -1,7 +1,12 @@
+import { useLocation } from "wouter";
+import PokeList from "../components/PokeList/PokeList";
+
 const FavsPage = (params) => {
+  const [location, setLocation] = useLocation();
+
   return (
     <div className="Favs__Container">
-      <h3>Pagina Favs</h3>
+      <PokeList route={location}></PokeList>
     </div>
   );
 };

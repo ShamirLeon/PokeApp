@@ -8,7 +8,7 @@ import { Route, Link, Router, Switch } from "wouter";
 import HomePage from "../../pages/HomePage";
 
 const Navigation = () => {
-  const { inputFilter } = useContext(PokemonContext);
+  const { inputFilter, favsPokemons } = useContext(PokemonContext);
 
   const [form, setForm] = useState("");
 
@@ -44,10 +44,10 @@ const Navigation = () => {
 
             <div className="Navigation__Favorites">
               <Link href="/favs">
-                <StarIcon className="Star" />
+                <StarIcon className="Star" color={"#F6FB00"} />
               </Link>
               <span className="Stars">STARS</span>
-              <span className="Number">18</span>
+              <span className="Number">{favsPokemons.length}</span>
             </div>
           </div>
         </nav>

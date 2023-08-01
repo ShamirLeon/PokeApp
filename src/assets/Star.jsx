@@ -8,7 +8,7 @@ const StarIcon = (props) => (
     {...props}
   >
     <path
-      fill="#F6FB00"
+      fill={props.color}
       stroke="#292D32"
       strokeLinecap="round"
       strokeLinejoin="round"z

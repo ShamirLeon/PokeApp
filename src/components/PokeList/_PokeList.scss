@@ -29,3 +29,13 @@ main{
         background-color: rgba(#F9CC3B, 1);
     }
 }
+
+.Figure{
+    display: grid;
+    place-content: center;
+    text-align: center;
+
+    & p {
+        font-size: 1.5rem;
+    }
+}
