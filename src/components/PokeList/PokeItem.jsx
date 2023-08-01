@@ -1,3 +1,4 @@
+import { useState } from "react";
 import StarIcon from "../../assets/Star";
 import PokeCard from "../PokeCard/PokeCard";
 import PokeInfo from "../PokeInfo/PokeInfo";
@@ -9,6 +10,20 @@ const PokeItem = ({
   handleRemPokemon,
   isFavorite,
 }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleTouchStart = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleTouchEnd = () => {
+    setIsFlipped(!isFlipped);
+  };
+
+  const handleTouchCancel = () => {
+    setIsFlipped(false);
+  };
+
   return (
     <div style={{ backgroundColor: `${color}` }}>
       <button
@@ -26,7 +41,13 @@ const PokeItem = ({
         />
       </button>
 
-      <div className="PokeItem">
+      <div
+        className={`PokeItem  ${isFlipped ? "flipped" : ""}`}
+        onClick={() => setIsFlipped(!isFlipped)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchCancel}
+      >
         <PokeCard
           height={pokemon.height}
           weight={pokemon.weight}
