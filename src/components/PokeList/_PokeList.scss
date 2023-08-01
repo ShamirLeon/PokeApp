@@ -4,6 +4,15 @@ main{
     padding-left: var(--asmenu-width);
     position: relative;
     padding-bottom: 50px;
+
+    @media #{$extra-small-mobile}{
+        padding-left: 0;
+        padding-top: $nav-height-sm;
+    }
+
+    @media only screen and (min-width:768px){
+        padding-left: 150px;
+    }
 }
 
 .LoadMore{
@@ -34,8 +43,20 @@ main{
     display: grid;
     place-content: center;
     text-align: center;
+    gap: 8px;
 
     & p {
         font-size: 1.5rem;
+
+        @media #{$extra-small-mobile}{
+            font-size: 1rem;
+        }
+    }
+
+    & img{
+        @media #{$extra-small-mobile}{
+            width: 85%;
+            margin: 0 auto;
+        }
     }
 }

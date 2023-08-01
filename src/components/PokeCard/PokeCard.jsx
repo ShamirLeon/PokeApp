@@ -1,7 +1,12 @@
-import mewtwo from "../../assets/pokemon-mewtwo.png";
-
-const PokeCard = ({ height, weight, number, name, type1, type2 = null, img }) => {
-  const typeText = "psychic";
+const PokeCard = ({
+  height,
+  weight,
+  number,
+  name,
+  type1,
+  type2 = null,
+  img,
+}) => {
   return (
     <div className="PokeCard">
       <div className="PokeCard__Circles PokeCard__Circles--left">

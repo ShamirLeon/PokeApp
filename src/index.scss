@@ -1,20 +1,20 @@
 /* Abstracts */
-@use './scss/abstracts/variables';
+@import './scss/abstracts/variables';
 
 /* Base */
-@use './scss/base/base';
-@use './scss/base/reset';
+@import './scss/base/base';
+@import './scss/base/reset';
 
 /* App */
-@use './app';
+@import './app';
 
 /* Components */
-@use './components/Navigation/Navigation';
-@use './components/SideMenu/SideMenu';
-@use './components/PokeCard/PokeCard';
-@use './components/PokeInfo/PokeInfo';
-@use './components/PokeInfo/InfoItem';
-@use './components//PokeList/PokeList';
-@use './components/PokeList/PokeItem';
-@use './components/Loader/Loader';
-@use './components/Atributtion/Atributtion';
+@import './components/Navigation/Navigation';
+@import './components/SideMenu/SideMenu';
+@import './components/PokeCard/PokeCard';
+@import './components/PokeInfo/PokeInfo';
+@import './components/PokeInfo/InfoItem';
+@import './components//PokeList/PokeList';
+@import './components/PokeList/PokeItem';
+@import './components/Loader/Loader';
+@import './components/Atributtion/Atributtion';

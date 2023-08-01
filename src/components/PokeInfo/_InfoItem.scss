@@ -6,10 +6,18 @@
     align-items: center;
     gap: 40px;
 
+    @media #{$large-mobile}{
+        gap: 8px;
+    }
+
     &__Text{
         font-weight: 700;
         text-align: right;
         white-space: nowrap;
+
+        @media #{$large-mobile}{
+            // text-align: center;
+        }
     }
 
     &__Value{
@@ -24,6 +32,10 @@
         border-radius: 12px;
         background: #bababa;
         overflow: hidden;
+
+        @media #{$large-mobile}{
+            display: none;
+        }
     }
 
     &__Progress{

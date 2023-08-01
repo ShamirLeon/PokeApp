@@ -43,4 +43,11 @@
 	/* Layout */
 	--nav-height: 120px;
 	--asmenu-width: 220px;
+	
 }
+$nav-height-sm: 80px;
+/* Responsive */
+$tablet-device:'only screen and (min-width: 769px) and (max-width: 991px)';
+$large-mobile:'only screen and (max-width: 768px)';
+$small-mobile: 'only screen and (max-width: 575px)';
+$extra-small-mobile: 'only screen and (max-width: 479px)';

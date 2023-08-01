@@ -10,8 +10,19 @@
     width: 100%;
     height: var(--nav-height);
 
+    @media #{$extra-small-mobile}{
+        width: 100%;
+        height: $nav-height-sm;
+        padding: 0 16px;
+    }
+
     &__Logo{
         height: 56px;
+
+        @media #{$extra-small-mobile}{
+            height: 30px;
+        }
+
     }
 
     & input{
@@ -32,6 +43,10 @@
 
         &:focus{
             width: 350px;
+        }
+
+        @media #{$extra-small-mobile}{
+            display: none;
         }
     }
 
@@ -67,6 +82,10 @@
 
         & img{
             width: 35px;
+        }
+
+        @media #{$extra-small-mobile}{
+            display: none;
         }
     }
 

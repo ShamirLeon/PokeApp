@@ -5,12 +5,26 @@
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    background-color: var(--BackItem);
+
+    @media #{$large-mobile}{
+        gap: 0;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+        &:hover{
+            transform: rotateY(180deg);
+        }
+    }
 
     &__Star{
         position: absolute;
-        top: 16px;
+        // top: 16px;
         right: 40px;
         border: none;
+        z-index: 50;
+
+        @media #{$large-mobile}{
+            right: 25px;
+        }
     }
 }

@@ -9,4 +9,9 @@
     align-items: center;
     overflow-x: hidden;
     text-align: center;
+
+    @media #{$large-mobile} {
+        padding-top: 0;
+        padding-left: 0;
+    }
 }
