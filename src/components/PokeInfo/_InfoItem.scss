@@ -9,6 +9,7 @@
     &__Text{
         font-weight: 700;
         text-align: right;
+        white-space: nowrap;
     }
 
     &__Value{
@@ -26,9 +27,7 @@
     }
 
     &__Progress{
-        // width: 140px;
         height: 12px;
-        // background-color: red;
         border-radius: 12px;
     }
 }
