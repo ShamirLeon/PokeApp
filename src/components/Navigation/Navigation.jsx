@@ -1,14 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Logo from "../../assets/Pokédex_logo.png";
 import StarIcon from "../../assets/Star";
 import SearchIcon from "../../assets/icons-search.svg";
+import FilterIcon from "../../assets/filter.svg";
 
 import { PokemonContext } from "../../context/PokemonContext";
 import { Route, Link, Router, Switch } from "wouter";
 import HomePage from "../../pages/HomePage";
 
 const Navigation = () => {
-  const { inputFilter, favsPokemons } = useContext(PokemonContext);
+  const { inputFilter, favsPokemons, HandleSideMenu } = useContext(PokemonContext);
 
   const [form, setForm] = useState("");
 
@@ -49,6 +50,9 @@ const Navigation = () => {
               <span className="Stars">STARS</span>
               <span className="Number">{favsPokemons.length}</span>
             </div>
+            <button className="Filter_Btn" onClick={HandleSideMenu}>
+              <img src={FilterIcon} />
+            </button>
           </div>
         </nav>
         <Switch>

@@ -13,6 +13,10 @@
         padding-top: $nav-height-sm;
         padding-left: 0;
     }
+
+    @media screen and (min-width:480px) {
+        padding-left: 150px;
+    }
 }
 
 ::-webkit-scrollbar{

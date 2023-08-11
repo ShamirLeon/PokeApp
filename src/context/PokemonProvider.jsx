@@ -136,6 +136,14 @@ export const PokemonProvider = ({ children }) => {
     }
   };
 
+
+  /* Handle Side Menu Mobile Devices */
+  const SideMenu = document.querySelector('.SideMenu');
+
+  const HandleSideMenu = () => {
+    SideMenu.classList.toggle('activeSideMenu')
+  }
+
   return (
     <PokemonContext.Provider
       value={{
@@ -159,6 +167,9 @@ export const PokemonProvider = ({ children }) => {
         getFavoritesPokemons,
         handleAddPokemon,
         handleRemPokemon,
+
+        /* Handle Side Menu */
+        HandleSideMenu
       }}
     >
       {children}

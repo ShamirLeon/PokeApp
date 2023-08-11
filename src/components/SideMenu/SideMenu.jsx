@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
 
-import cancelIcon from '../../assets/cancel-icon.svg'
+import cancelIcon from "../../assets/cancel-icon.svg";
 
 const SideMenu = () => {
   const { filterPokemons, active, setActive, clearFilter } =
     useContext(PokemonContext);
+
+  const [activeMenu, setActiveMenu] = useState(false);
 
   const buttons = [
     { id: 1, color: "fire" },
@@ -31,11 +33,15 @@ const SideMenu = () => {
   ];
 
   return (
-    <aside className="SideMenu">
+    <aside className={!activeMenu ? `SideMenu` : `SideMenu activeSideMenu` }>
       {buttons.map(({ id, color }) => (
         <div className="SideMenu__BtnContainer" key={id}>
           <button
-            className={active == color ? `SideMenu__Btn ${color} active` : `SideMenu__Btn ${color}`}
+            className={
+              active == color
+                ? `SideMenu__Btn ${color} active`
+                : `SideMenu__Btn ${color}`
+            }
             onClick={() => {
               filterPokemons(color);
               setActive(color);
@@ -44,7 +50,14 @@ const SideMenu = () => {
             {color}
           </button>
           {active == color ? (
-            <button style={{backgroundColor: active == color ? `var(--color-${color})` : null}} className="clearFilter" onClick={clearFilter}>
+            <button
+              style={{
+                backgroundColor:
+                  active == color ? `var(--color-${color})` : null,
+              }}
+              className="clearFilter"
+              onClick={clearFilter}
+            >
               <img src={cancelIcon} />
             </button>
           ) : null}

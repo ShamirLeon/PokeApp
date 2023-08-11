@@ -10,8 +10,12 @@ main{
         padding-top: $nav-height-sm;
     }
 
-    @media only screen and (min-width:768px) and (max-width:769px){
+    @media only screen and (min-width:478px) and (max-width:769px){
         padding-left: 150px;
+    }
+
+    @media only screen and (min-width) {
+        
     }
 }
 

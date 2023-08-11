@@ -16,6 +16,8 @@
         padding: 0 16px;
     }
 
+
+
     &__Logo{
         height: 56px;
 
@@ -62,6 +64,12 @@
         background: #FFF;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         color: var(--Gray);
+
+        @media #{$extra-small-mobile}{
+            position: absolute;
+            left: 16px;
+            bottom: -85vh;
+        }
     }
 
     &__Submenu{
@@ -93,4 +101,23 @@
 
 .Number{
     color: var(--Ligth-Gray);
+}
+
+.Stars{
+    @media #{$extra-small-mobile}{
+        display: none;
+    }
+}
+
+.Filter_Btn{
+    border: none;
+    background-color: transparent;
+
+    & img{
+        width: 30px;
+    }
+
+    @media screen and (min-width:426px) {
+        display: none;
+    }
 }
