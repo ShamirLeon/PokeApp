@@ -12,18 +12,6 @@ const PokeItem = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleTouchStart = () => {
-    setIsFlipped(!isFlipped);
-  };
-
-  const handleTouchEnd = () => {
-    setIsFlipped(!isFlipped);
-  };
-
-  const handleTouchCancel = () => {
-    setIsFlipped(false);
-  };
-
   return (
     <div style={{ backgroundColor: `${color}` }}>
       <button
@@ -44,9 +32,6 @@ const PokeItem = ({
       <div 
         className={`PokeItem  ${isFlipped ? "flipped" : ""}`}
         onClick={() => setIsFlipped(!isFlipped)}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onTouchCancel={handleTouchCancel}
       >
         <PokeCard
           height={pokemon.height}
