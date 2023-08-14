@@ -7,6 +7,8 @@ const PokeCard = ({
   type2 = null,
   img,
 }) => {
+  const isValidNumberLength = number.length > 2;
+
   return (
     <div className="PokeCard">
       <div className="PokeCard__Circles PokeCard__Circles--left">
@@ -15,7 +17,12 @@ const PokeCard = ({
       <div className="PokeCard__Circles PokeCard__Circles--right">
         <span>{weight}kg</span>
       </div>
-      <span className="PokeCard__Number">#{number}</span>
+      <span
+        style={{ fontSize: isValidNumberLength ? "75px" : "" }}
+        className="PokeCard__Number"
+      >
+        #{number}
+      </span>
       <img src={img} alt={`Pokemon ${name}`} className="PokeCard__Img" />
       <h2 className="PokeCard__Name">{name}</h2>
       <div className="PokeCard__Texts">

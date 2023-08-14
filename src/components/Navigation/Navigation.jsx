@@ -1,15 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Logo from "../../assets/Pokédex_logo.png";
 import StarIcon from "../../assets/Star";
 import SearchIcon from "../../assets/icons-search.svg";
 import FilterIcon from "../../assets/filter.svg";
+import CancelIcon from "../../assets/cancel-icon.svg";
 
 import { PokemonContext } from "../../context/PokemonContext";
 import { Route, Link, Router, Switch } from "wouter";
 import HomePage from "../../pages/HomePage";
 
 const Navigation = () => {
-  const { inputFilter, favsPokemons, HandleSideMenu } = useContext(PokemonContext);
+  const { inputFilter, favsPokemons, HandleSideMenu, activeSideMenu } =
+    useContext(PokemonContext);
 
   const [form, setForm] = useState("");
 
@@ -50,8 +52,18 @@ const Navigation = () => {
               <span className="Stars">STARS</span>
               <span className="Number">{favsPokemons.length}</span>
             </div>
-            <button className="Filter_Btn" onClick={HandleSideMenu}>
-              <img src={FilterIcon} />
+            <button
+              className="Filter_Btn"
+              onClick={() => {
+                HandleSideMenu();
+                setActiveMenu(!activeMenu);
+              }}
+            >
+              {activeSideMenu ? (
+                <img src={CancelIcon} style={{ width: "20px" }} />
+              ) : (
+                <img src={FilterIcon} />
+              )}
             </button>
           </div>
         </nav>

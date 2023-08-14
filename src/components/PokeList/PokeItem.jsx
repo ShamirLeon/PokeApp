@@ -51,7 +51,7 @@ const PokeItem = ({
         <PokeCard
           height={pokemon.height}
           weight={pokemon.weight}
-          number={pokemon.id}
+          number={pokemon.id.toString()}
           name={pokemon.name}
           type1={pokemon.types[0].type.name}
           type2={pokemon.types[1]?.type.name}

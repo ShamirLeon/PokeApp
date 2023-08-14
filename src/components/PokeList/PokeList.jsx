@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
 
-import SadPikachu from "../../assets/pika-sad.gif"
+import SadPikachu from "../../assets/pika-sad.gif";
 
 import PokeItem from "./PokeItem";
 import Loader from "../Loader/Loader";
@@ -40,7 +40,9 @@ const PokeList = ({ route }) => {
           <main>
             {filteredPokemons.length ? (
               <>
-                <p>{filteredPokemons.length} results were found:</p>
+                <p style={{ textAlign: "center" }}>
+                  {filteredPokemons.length} results were found:
+                </p>
                 {filteredPokemons.map((pokemon, index) => (
                   <PokeItem
                     pokemon={pokemon}
@@ -74,13 +76,13 @@ const PokeList = ({ route }) => {
           </main>
         )
       ) : (
-        <>{
-          favsPokemons.length == 0 ? (
+        <>
+          {favsPokemons.length == 0 ? (
             <figure className="Figure">
               <img src={SadPikachu} alt="Sad Pikachu" />
               <p>No favorites pokemons found.</p>
             </figure>
-          ):(
+          ) : (
             favsPokemons.map((pokemon, index) => (
               <PokeItem
                 pokemon={pokemon}
@@ -91,8 +93,7 @@ const PokeList = ({ route }) => {
                 handleRemPokemon={handleRemPokemon} // Establecer si es favorito o no
               />
             ))
-          )
-        }
+          )}
         </>
       )}
     </>

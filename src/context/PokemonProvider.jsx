@@ -136,12 +136,14 @@ export const PokemonProvider = ({ children }) => {
     }
   };
 
-
   /* Handle Side Menu Mobile Devices */
-  const SideMenu = document.querySelector('.SideMenu');
+  const SideMenu = document.querySelector(".SideMenu");
 
-  const HandleSideMenu = () => {
-    SideMenu.classList.toggle('activeSideMenu')
+  const [activeSideMenu, setActiveSideMenu] = useState(false);
+
+  function HandleSideMenu() {
+    SideMenu.classList.toggle("activeSideMenu");
+    setActiveSideMenu(!activeSideMenu);
   }
 
   return (
@@ -169,7 +171,8 @@ export const PokemonProvider = ({ children }) => {
         handleRemPokemon,
 
         /* Handle Side Menu */
-        HandleSideMenu
+        HandleSideMenu,
+        activeSideMenu,
       }}
     >
       {children}
