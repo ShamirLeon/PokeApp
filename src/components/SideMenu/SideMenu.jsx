@@ -1,11 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
+import { useLocation } from "wouter";
 
 import cancelIcon from "../../assets/cancel-icon.svg";
 
 const SideMenu = () => {
   const { filterPokemons, active, setActive, clearFilter, HandleSideMenu } =
     useContext(PokemonContext);
+
+    const [location, setLocation] = useLocation();
+    // console.log(location);
 
   const buttons = [
     { id: 1, color: "fire" },
@@ -41,7 +45,7 @@ const SideMenu = () => {
                 : `SideMenu__Btn ${color}`
             }
             onClick={() => {
-              filterPokemons(color);
+              filterPokemons(color, location);
               setActive(color); 
               HandleSideMenu();
             }}

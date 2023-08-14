@@ -65,13 +65,20 @@ export const PokemonProvider = ({ children }) => {
   /* Filter pokemons */
   const [filteredPokemons, setFilteredPokemons] = useState([]);
 
-  const filterPokemons = (nameType) => {
-    const filteredResults = globalPokemons.filter((pokemon) =>
-      pokemon.types.map((type) => type.type.name).includes(nameType)
-    );
+  const filterPokemons = (nameType, location) => {
+    if (location == "/favs") {
+      console.log("favs");
+      const filteredResults = favsPokemons.filter((pokemon) =>
+        pokemon.types.map((type) => type.type.name).includes(nameType)
+      );
 
-    setFilteredPokemons(filteredResults);
-    console.log(filteredPokemons);
+      setFilteredPokemons(filteredResults);
+    } else {
+      const filteredResults = globalPokemons.filter((pokemon) =>
+        pokemon.types.map((type) => type.type.name).includes(nameType)
+      );
+      setFilteredPokemons(filteredResults);
+    }
   };
 
   /* Search input filter */

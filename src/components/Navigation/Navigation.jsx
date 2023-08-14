@@ -56,7 +56,6 @@ const Navigation = () => {
               className="Filter_Btn"
               onClick={() => {
                 HandleSideMenu();
-                setActiveMenu(!activeMenu);
               }}
             >
               {activeSideMenu ? (

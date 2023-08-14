@@ -77,22 +77,42 @@ const PokeList = ({ route }) => {
         )
       ) : (
         <>
-          {favsPokemons.length == 0 ? (
-            <figure className="Figure">
-              <img src={SadPikachu} alt="Sad Pikachu" />
-              <p>No favorites pokemons found.</p>
-            </figure>
+          {filteredPokemons.length ? (
+            <>
+              <p style={{ textAlign: "center" }}>
+                {filteredPokemons.length} results were found:
+              </p>
+              {filteredPokemons.map((pokemon, index) => (
+                <PokeItem
+                  pokemon={pokemon}
+                  key={pokemon.id}
+                  color={index % 2 === 0 ? bgColor1 : bgColor2}
+                  isFavorite={favoritesMap[pokemon.id] || false}
+                  handleAddPokemon={handleAddPokemon} // Pasar el método handleAddPokemon
+                  handleRemPokemon={handleRemPokemon}
+                />
+              ))}
+            </>
           ) : (
-            favsPokemons.map((pokemon, index) => (
-              <PokeItem
-                pokemon={pokemon}
-                key={pokemon.id}
-                color={index % 2 === 0 ? bgColor1 : bgColor2}
-                isFavorite={favoritesMap[pokemon.id] || false}
-                handleAddPokemon={handleAddPokemon} // Pasar el método handleAddPokemon
-                handleRemPokemon={handleRemPokemon} // Establecer si es favorito o no
-              />
-            ))
+            <>
+              {favsPokemons.length == 0 ? (
+                <figure className="Figure">
+                  <img src={SadPikachu} alt="Sad Pikachu" />
+                  <p>No favorites pokemons found.</p>
+                </figure>
+              ) : (
+                favsPokemons.map((pokemon, index) => (
+                  <PokeItem
+                    pokemon={pokemon}
+                    key={pokemon.id}
+                    color={index % 2 === 0 ? bgColor1 : bgColor2}
+                    isFavorite={favoritesMap[pokemon.id] || false}
+                    handleAddPokemon={handleAddPokemon} // Pasar el método handleAddPokemon
+                    handleRemPokemon={handleRemPokemon} // Establecer si es favorito o no
+                  />
+                ))
+              )}
+            </>
           )}
         </>
       )}
