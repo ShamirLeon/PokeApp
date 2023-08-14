@@ -5,12 +5,17 @@
     justify-content: center;
     align-items: center;
     padding: 40px 0;
+    // width: 100px;
 
     @media #{$large-mobile}{
         gap: 0;
         perspective: 1000px;
         transform-style: preserve-3d;
         transition: transform 0.8s;
+        width: 70%;
+        margin: auto;
+        padding: 0;
+
         &.flipped{
             transform: rotateY(180deg);
         }

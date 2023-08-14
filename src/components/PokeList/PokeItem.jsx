@@ -41,7 +41,7 @@ const PokeItem = ({
         />
       </button>
 
-      <div
+      <div 
         className={`PokeItem  ${isFlipped ? "flipped" : ""}`}
         onClick={() => setIsFlipped(!isFlipped)}
         onTouchStart={handleTouchStart}
