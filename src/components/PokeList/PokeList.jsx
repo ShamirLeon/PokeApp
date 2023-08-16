@@ -5,6 +5,7 @@ import SadPikachu from "../../assets/pika-sad.gif";
 
 import PokeItem from "./PokeItem";
 import Loader from "../Loader/Loader";
+import Form from "../Form/Form";
 
 const PokeList = ({ route }) => {
   const {
@@ -40,7 +41,8 @@ const PokeList = ({ route }) => {
           <main>
             {filteredPokemons.length ? (
               <>
-                <p style={{ textAlign: "center" }}>
+                <Form id={2} />
+                <p className="Search__Info">
                   {filteredPokemons.length} results were found:
                 </p>
                 {filteredPokemons.map((pokemon, index) => (
@@ -56,6 +58,7 @@ const PokeList = ({ route }) => {
               </>
             ) : (
               <>
+                <Form id={2} />
                 {allPokemons.map((pokemon, index) => (
                   <PokeItem
                     pokemon={pokemon}
@@ -79,7 +82,7 @@ const PokeList = ({ route }) => {
         <>
           {filteredPokemons.length ? (
             <>
-              <p style={{ textAlign: "center" }}>
+              <p className="Search__Info">
                 {filteredPokemons.length} results were found:
               </p>
               {filteredPokemons.map((pokemon, index) => (

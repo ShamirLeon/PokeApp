@@ -82,17 +82,18 @@ export const PokemonProvider = ({ children }) => {
   };
 
   /* Search input filter */
+  const inputsSearch = document.querySelectorAll('.Form__Input');
+  inputsSearch.forEach((input)=>{
+    input.addEventListener("search", ()=>{
+      clearFilter();
+    })
+  });
+
   const inputFilter = (value) => {
     const filterPokemons = globalPokemons.filter((pokemon) =>
       pokemon.name.includes(value)
     );
     setFilteredPokemons(filterPokemons);
-
-    const inputSearch = document.getElementById("inputSearch");
-    console.log(inputSearch);
-    inputSearch.addEventListener("search", () => {
-      clearFilter();
-    });
   };
 
   /* favorites page */
