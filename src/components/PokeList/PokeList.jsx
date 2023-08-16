@@ -41,7 +41,7 @@ const PokeList = ({ route }) => {
           <main>
             {filteredPokemons.length ? (
               <>
-                <Form id={2} />
+                <Form id={2} idBtn={2}/>
                 <p className="Search__Info">
                   {filteredPokemons.length} results were found:
                 </p>
@@ -58,7 +58,7 @@ const PokeList = ({ route }) => {
               </>
             ) : (
               <>
-                <Form id={2} />
+                <Form id={2} idBtn={2}/>
                 {allPokemons.map((pokemon, index) => (
                   <PokeItem
                     pokemon={pokemon}

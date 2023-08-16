@@ -21,7 +21,7 @@ const Navigation = () => {
             <img src={Logo} alt="" className="Navigation__Logo" />
           </Link>
           <div className="Navigation__Submenu">
-            <Form id={1}/>
+            <Form id={1} idBtn={1}/>
 
             <div className="Navigation__Favorites">
               <Link href="/favs">

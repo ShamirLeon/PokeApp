@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
 
-const Form = ({id}) => {
+import SearchIcon from "../../assets/icons-search.svg"
+
+const Form = ({ id, idBtn }) => {
   const { inputFilter } = useContext(PokemonContext);
 
   const [form, setForm] = useState("");
@@ -36,6 +38,10 @@ const Form = ({id}) => {
       />
 
       <span className="Form__Info">Press 'Enter' to search pokemons</span>
+      <button id={`Form__Btn${idBtn}`} type="submit" className="Form__Btn">
+        <img src={SearchIcon} />
+      </button>
+
     </form>
   );
 };
