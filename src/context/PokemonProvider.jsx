@@ -67,7 +67,6 @@ export const PokemonProvider = ({ children }) => {
 
   const filterPokemons = (nameType, location) => {
     if (location == "/favs") {
-      console.log("favs");
       const filteredResults = favsPokemons.filter((pokemon) =>
         pokemon.types.map((type) => type.type.name).includes(nameType)
       );
@@ -82,16 +81,16 @@ export const PokemonProvider = ({ children }) => {
   };
 
   /* Search input filter */
-  const inputsSearch = document.querySelectorAll('.Form__Input');
-  inputsSearch.forEach((input)=>{
-    input.addEventListener("search", ()=>{
+  const inputsSearch = document.querySelectorAll(".Form__Input");
+  inputsSearch.forEach((input) => {
+    input.addEventListener("search", () => {
       clearFilter();
-    })
+    });
   });
 
   const inputFilter = (value) => {
     const filterPokemons = globalPokemons.filter((pokemon) =>
-      pokemon.name.includes(value)
+      pokemon.name.includes(value.toLowerCase())
     );
     setFilteredPokemons(filterPokemons);
   };
