@@ -23,10 +23,10 @@
 
     &__Star{
         position: absolute;
-        // top: 16px;
         right: 40px;
         border: none;
         z-index: 50;
+        cursor: pointer;
 
         @media #{$large-mobile}{
             right: 25px;

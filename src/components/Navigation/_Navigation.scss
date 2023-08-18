@@ -18,6 +18,7 @@
 
     &__Logo{
         height: 56px;
+        cursor: pointer;
 
         @media #{$extra-small-mobile}{
             height: 30px;
@@ -81,4 +82,8 @@
     @media screen and (min-width:426px) {
         display: none;
     }
+}
+
+.Star{
+    cursor: pointer;
 }
