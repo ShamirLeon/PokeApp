@@ -14,6 +14,7 @@
         width: 100%;
         height: $nav-height-sm;
         padding: 0 16px;
+        justify-content: center;
     }
 
     &__Logo{
@@ -66,20 +67,6 @@
 
 .Stars{
     @media #{$extra-small-mobile}{
-        display: none;
-    }
-}
-
-.Filter_Btn{
-    border: none;
-    background-color: transparent;
-
-    & img{
-        width: 30px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    @media screen and (min-width:426px) {
         display: none;
     }
 }

@@ -8,8 +8,7 @@ const SideMenu = () => {
   const { filterPokemons, active, setActive, clearFilter, HandleSideMenu } =
     useContext(PokemonContext);
 
-    const [location, setLocation] = useLocation();
-    // console.log(location);
+  const [location, setLocation] = useLocation();
 
   const buttons = [
     { id: 1, color: "fire" },
@@ -36,6 +35,9 @@ const SideMenu = () => {
 
   return (
     <aside className="SideMenu">
+      <button className="SideMenu__CancelBtn" onClick={HandleSideMenu}>
+        <img src={cancelIcon} />
+      </button>
       {buttons.map(({ id, color }) => (
         <div className="SideMenu__BtnContainer" key={id}>
           <button
@@ -46,7 +48,7 @@ const SideMenu = () => {
             }
             onClick={() => {
               filterPokemons(color, location);
-              setActive(color); 
+              setActive(color);
               HandleSideMenu();
             }}
           >

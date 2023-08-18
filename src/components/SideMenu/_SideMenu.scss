@@ -22,7 +22,7 @@
         padding: 16px 20px;
     }
 
-    @media screen and (max-width:426px) {
+    @media screen and (max-width:478px) {
         width: 100%;
         align-items: center;
         gap: 24px;
@@ -54,6 +54,22 @@
             min-width: 100px;
             min-height: 30px;
             font-size: 12px;
+        }
+    }
+
+    &__CancelBtn{
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 16px;
+
+        & img{
+            width: 20px;
+        }
+
+        @media only screen and (min-width:478px) {
+            display: none;
         }
     }
 }

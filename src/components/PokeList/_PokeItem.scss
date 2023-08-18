@@ -12,9 +12,9 @@
         perspective: 1000px;
         transform-style: preserve-3d;
         transition: transform 0.8s;
-        width: 70%;
+        width: 100%;
         margin: auto;
-        padding: 0;
+        padding: 0 41px;
 
         &.flipped{
             transform: rotateY(180deg);
@@ -29,7 +29,7 @@
         cursor: pointer;
 
         @media #{$large-mobile}{
-            right: 25px;
+            right: 16px;
         }
     }
 }

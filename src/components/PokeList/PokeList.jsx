@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { PokemonContext } from "../../context/PokemonContext";
 
 import SadPikachu from "../../assets/pika-sad.gif";
+import FilterIcon from "../../assets/filter.svg";
 
 import PokeItem from "./PokeItem";
 import Loader from "../Loader/Loader";
@@ -16,6 +17,7 @@ const PokeList = ({ route }) => {
     favsPokemons,
     handleAddPokemon,
     handleRemPokemon,
+    HandleSideMenu,
   } = useContext(PokemonContext);
 
   const [favoritesMap, setFavoritesMap] = useState({});
@@ -41,7 +43,17 @@ const PokeList = ({ route }) => {
           <main>
             {filteredPokemons.length ? (
               <>
-                <Form id={2} idBtn={2}/>
+                <div className="Form__Container">
+                  <Form id={2} />
+                  <button
+                    className="Filter_Btn"
+                    onClick={() => {
+                      HandleSideMenu();
+                    }}
+                  >
+                    <img src={FilterIcon} />
+                  </button>
+                </div>
                 <p className="Search__Info">
                   {filteredPokemons.length} results were found:
                 </p>
@@ -58,7 +70,17 @@ const PokeList = ({ route }) => {
               </>
             ) : (
               <>
-                <Form id={2} idBtn={2}/>
+                <div className="Form__Container">
+                  <Form id={2} />
+                  <button
+                    className="Filter_Btn"
+                    onClick={() => {
+                      HandleSideMenu();
+                    }}
+                  >
+                    <img src={FilterIcon}/>
+                  </button>
+                </div>
                 {allPokemons.map((pokemon, index) => (
                   <PokeItem
                     pokemon={pokemon}

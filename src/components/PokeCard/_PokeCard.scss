@@ -23,6 +23,10 @@
         margin: 40px 0;
     }
 
+    @media only screen and (min-width:42) {
+        
+    }
+
     &__Circles{
         display: grid;
         place-content: center;

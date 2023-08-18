@@ -70,3 +70,27 @@ main{
     text-align: center;
     background-color: #EAEAEA;
 }
+
+.Form__Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EAEAEA;
+    width: 100%;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+.Filter_Btn{
+    border: none;
+    background-color: transparent;
+
+    & img{
+        width: 30px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @media screen and (min-width:478px) {
+        display: none;
+    }
+}
