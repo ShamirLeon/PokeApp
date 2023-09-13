@@ -21,6 +21,6 @@
     }
 
     @media #{$large-mobile}{
-        min-width: 100%;
+        width: calc(100% - 82px);
     }
 }
