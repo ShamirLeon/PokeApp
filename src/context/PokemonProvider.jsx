@@ -24,7 +24,6 @@ export const PokemonProvider = ({ children }) => {
     });
 
     const results = await Promise.all(promises);
-
     setAllPokemons([...allPokemons, ...results]);
     setLoading(false);
   };

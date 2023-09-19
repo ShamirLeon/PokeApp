@@ -40,7 +40,7 @@ const PokeItem = ({
           name={pokemon.name}
           type1={pokemon.types[0].type.name}
           type2={pokemon.types[1]?.type.name}
-          img={pokemon.sprites.other.dream_world.front_default}
+          img={pokemon.id < 649 ? pokemon.sprites.other.dream_world.front_default : pokemon.sprites.front_default}
         />
         <PokeInfo
           Hp={pokemon.stats[0].base_stat}
